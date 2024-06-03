@@ -10,10 +10,10 @@ export interface Character {
   species: string;
   type: string;
   gender: string;
-  origin: {
-    name: string;
-    url: string;
-  };
+  // origin: {
+  //   name: string;
+  //   url: string;
+  // };
   location: {
     name: string;
     url: string;
@@ -21,11 +21,11 @@ export interface Character {
   image: string;
   episode: string[];
   url: string;
-  created: string;
+  // created: string;
 }
 
 interface CharacterListProps {
-  className?: string;
+  className: string;
 
 }
 
@@ -35,7 +35,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ className }) => {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const initialRender = useRef<boolean>(true);
 
-  const fetchCharacters = async (page: number): Promise<void> => {
+  const fetchCharacters = async (page: number) => {
 
       const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${page}`);
       setCharacters((prev) => [...prev, ...response.data.results]);
