@@ -60,7 +60,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ className }) => {
   }, [hasMore, page]);
 
   return (
-    <div className={`grid m-0 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 ${className}`}>
+    <div className={`grid m-0 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5`}>
       {characters.map((character) => (
         <CharacterCard key={character.id} character={character} />
       ))}
